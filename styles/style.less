@@ -100,9 +100,16 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 }
 
 .at-container{margin: 0px auto;}
-.at-container-s{&:extend(.at-container); width: @container-small;}
-.at-container-m{&:extend(.at-container); width: @container-medium;}
-.at-container-l{&:extend(.at-container); width: @container-large;}
+.at-container-s{
+    &:extend(.at-container); 
+    width: @container-small;}
+.at-container-m{
+    &:extend(.at-container); 
+    width: @container-medium;}
+.at-container-l{
+    &:extend(.at-container); 
+    width: @container-large;
+}
 
 .pad-s{padding: @padding-small;}
 .pad-m{padding: @padding-medium;}
@@ -423,7 +430,23 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 .at-input.at-large{
     width: 100%;
 }
-//////////////////////////////////////////////////////// TRANSPARENT BUTTONS
+//////////////////////////////////////////////////////// TRANSPARENT INPUTS
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                                        COMPONENETS
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//-------------- TEXT RELATED
+
+.at-nav-header{
+    padding-bottom: 15px;
+    border-bottom: 0.5px solid rgba(189, 189, 189, 0.3);
+    margin-bottom: 10px;
+}
+
+
+
+
 
 // BUG FIXES
 
@@ -436,7 +459,7 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
     color: white;
 }
 .image{
-    background-image: url("https://images.unsplash.com/photo-1586890313896-0f77117a8674?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D");
+    background-image: url("https://cdn.wallpaperhub.app/cloudcache/4/3/0/b/1/6/430b16037a662ded50458ffa28c32fae675d04b2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
