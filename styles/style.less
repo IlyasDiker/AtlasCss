@@ -8,6 +8,7 @@
     font-family: 'Inter', sans-serif;
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 //--------------TYPOGRAPHY
@@ -49,6 +50,64 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 @PrimaryGradient: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
 @PrimaryDarkGradient: linear-gradient(180deg, #3B7ADD 0%, #346DC5 100%);
 
+//--------------ALIGNEMENTS
+
+.at-flex-horizontal{
+    display:flex;
+    flex-direction: row;
+}
+
+//--------------SPACINGS
+@container-small: 500px;
+@container-medium: 750px;
+@container-large: 1000px;
+
+@padding-small:10px;
+@padding-medium:20px;
+@padding-large:30px;
+@padding-xlarge:50px;
+
+@smallSpacing: 2px;
+@mediumSpacing: 7px;
+@largeSpacing: 12px;
+@xlargeSpacing: 17px;
+@xxlargeSpacing: 30px;
+
+.space-v-s>*{margin-top: @smallSpacing;margin-bottom: @smallSpacing;}
+.space-v-m>*{margin-top: @mediumSpacing;margin-bottom: @mediumSpacing;}
+.space-v-l>*{margin-top: @largeSpacing;margin-bottom: @largeSpacing;}
+.space-v-xl>*{margin-top: @xlargeSpacing;margin-bottom: @xlargeSpacing;}
+.space-v-xxl>*{margin-top: @xxlargeSpacing;margin-bottom: @xxlargeSpacing;}
+
+.space-h-s>*{margin-left: @smallSpacing;margin-right: @smallSpacing;}
+.space-h-m>*{margin-left: @mediumSpacing;margin-right: @mediumSpacing;}
+.space-h-l>*{margin-left: @largeSpacing;margin-right: @largeSpacing;}
+.space-h-xl>*{margin-left: @xlargeSpacing;margin-right: @xlargeSpacing;}
+.space-h-xxl>*{margin-left: @xxlargeSpacing;margin-right: @xxlargeSpacing;}
+
+.center-h{
+    display: flex;
+    justify-content: center;
+}
+.center-v{
+    display: flex;
+    align-items: center;
+}
+.center-vh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.at-container{margin: 0px auto;}
+.at-container-s{&:extend(.at-container); width: @container-small;}
+.at-container-m{&:extend(.at-container); width: @container-medium;}
+.at-container-l{&:extend(.at-container); width: @container-large;}
+
+.pad-s{padding: @padding-small;}
+.pad-m{padding: @padding-medium;}
+.pad-l{padding: @padding-large;}
+.pad-xl{padding: @padding-xlarge;}
 //--------------BLURS
 
 .blur-4{
@@ -214,6 +273,7 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
         &:extend(.at-transparent-button:hover);
     }
 }
+
 //////////////////////////////////////////////////////// NORMAL BUTTONS
 .at-button.at-dark{
     background-color: @Dark90;
@@ -337,15 +397,16 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 
 //--------------INPUTS
 
+//
 .at-input{
-    padding: 7px;
+    padding: 7px 12px;
     &:extend(.radius-10);
     border: 1px solid @Dark40;
     color: @Dark95;
     outline: none;
     font-size: 14px;
     transition: 0.2s;
-    font-weight: 600;
+    font-weight: 500;
     &::placeholder{
         font-weight: 400;
     }
@@ -355,11 +416,16 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
     }
 }
 .at-input.at-dark{
-
+    background-color: @Dark95;
+    color: white;
+    border-color: darken(@Dark95,10%);
 }
+.at-input.at-large{
+    width: 100%;
+}
+//////////////////////////////////////////////////////// TRANSPARENT BUTTONS
 
-
-
+// BUG FIXES
 
 
 
@@ -370,7 +436,7 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
     color: white;
 }
 .image{
-    background-image: url("https://wallpapershome.com/images/pages/pic_h/23117.jpg");
+    background-image: url("https://images.unsplash.com/photo-1586890313896-0f77117a8674?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
