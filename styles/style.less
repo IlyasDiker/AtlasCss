@@ -20,9 +20,16 @@ h1{font-size: 64px;}
 h2{font-size: 48px;}
 h3{font-size: 36px;}
 h4{font-size: 24px;}
-p{font-size: 18px;}
-p2{font-size: 24px;}
+p{font-size: 18px;margin-top: 17px;}
+p2{font-size: 24px; margin-top: 25px;}
 accented{background-color: @PrimaryBlue;border-radius: 5px;}
+a{
+    color: #06c; 
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline;
+    }
+}
 
 //--------------COLORS
 
@@ -52,9 +59,22 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 
 //--------------ALIGNEMENTS
 
+.at-flex{
+    display: flex;
+}
+
 .at-flex-horizontal{
     display:flex;
     flex-direction: row;
+}
+
+.at-flex-vertical{
+    display:flex;
+    flex-direction: column;
+}
+
+.space-between{
+    justify-content: space-between;
 }
 
 //--------------SPACINGS
@@ -102,19 +122,36 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 .at-container{margin: 0px auto;}
 .at-container-s{
     &:extend(.at-container); 
-    width: @container-small;}
+    width: @container-small;
+    @media only screen and (max-width: calc(@container-small + 20px)) {
+        width: 90%;
+    }
+}
 .at-container-m{
     &:extend(.at-container); 
-    width: @container-medium;}
+    width: @container-medium;
+    @media only screen and(max-width: calc(@container-medium + 20px)) {
+        width: 90%;
+    }
+}
 .at-container-l{
     &:extend(.at-container); 
     width: @container-large;
+    @media only screen and (max-width: calc(@container-large + 20px)) {
+        width: 90%;
+    }
 }
 
 .pad-s{padding: @padding-small;}
 .pad-m{padding: @padding-medium;}
 .pad-l{padding: @padding-large;}
 .pad-xl{padding: @padding-xlarge;}
+
+.at-spacer-s{height: calc(@smallSpacing * 5);}
+.at-spacer-m{height: calc(@mediumSpacing * 5);}
+.at-spacer-l{height: calc(@largeSpacing * 5);}
+.at-spacer-xl{height: calc(@xlargeSpacing * 5);}
+
 //--------------BLURS
 
 .blur-4{
@@ -141,9 +178,9 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
     backdrop-filter: blur( 50px );
     -webkit-backdrop-filter: blur( 50px );
 }
-.blur-70{
-    backdrop-filter: blur( 70px );
-    -webkit-backdrop-filter: blur( 70px );
+.blur-60{
+    backdrop-filter: blur( 60px );
+    -webkit-backdrop-filter: blur( 60px );
 }
 .blur-70{
     backdrop-filter: blur( 70px );
@@ -280,7 +317,9 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
         &:extend(.at-transparent-button:hover);
     }
 }
-
+.at-small-button{
+    font-size: 12px;
+}
 //////////////////////////////////////////////////////// NORMAL BUTTONS
 .at-button.at-dark{
     background-color: @Dark90;
@@ -438,15 +477,52 @@ accented{background-color: @PrimaryBlue;border-radius: 5px;}
 
 //-------------- TEXT RELATED
 
+.text-center{
+    text-align: center;
+}
+
 .at-nav-header{
     padding-bottom: 15px;
     border-bottom: 0.5px solid rgba(189, 189, 189, 0.3);
     margin-bottom: 10px;
 }
 
+//-------------- NAVBAR
 
-
-
+.at-navbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 7px;
+    z-index: 1;
+    ul{
+        list-style-type: none;
+        align-items: center;
+        li{
+            margin-left: 20px;
+            font-size: 14px;
+        }
+    }
+}
+.at-navbar.at-dark{
+    color: black;
+}
+.at-navbar.at-light{
+    color: white;
+}
+.at-navbar.at-bg-dark{
+    background-color: rgba(0, 0, 0, 0.76);
+}
+.at-navbar.at-bg-light{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.at-navbar.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
 // BUG FIXES
 
