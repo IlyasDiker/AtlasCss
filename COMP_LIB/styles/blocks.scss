@@ -1,0 +1,44 @@
+.blocks-content{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+    overflow: hidden;
+    .block-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background: #f5f5f5;
+        .expand-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            background: #ebebeb;
+        }
+    }
+    .block-body{
+        padding: 0px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+        &.expand{
+            padding: 10px;
+            max-height: fit-content;
+            overflow: auto;
+        }
+
+        .block-title{
+            background: #fafafa;
+        }
+    }
+}

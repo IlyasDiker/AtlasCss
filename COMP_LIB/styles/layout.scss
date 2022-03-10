@@ -1,0 +1,89 @@
+.page-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    inset: 0;
+    overflow: hidden;
+    background: #EFF2F4;
+    color: black;
+}
+
+.page-layout-dash{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navbar{
+    height: 100%;
+    width: fit-content;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 10px;
+    background: linear-gradient(180deg, #16191C 0%, #16191C 70.83%, #160c3c 100%), #16191C;
+    color: white;
+    gap: 15px;
+
+    .nav-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-logo{
+            background: transparent;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 50px;
+            }
+            height: 50px;
+            width: 50px;
+        }
+    }
+    .nav-list{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        button{
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                background: rgba(255, 255, 255, 0.03);
+            }
+        }
+        &.main{
+            flex-grow: 1;
+        }
+    }
+}
+
+.row-gap-0{
+    row-gap: 0px;
+}
+.row-gap-5{
+    row-gap: 5px;
+}
+.row-gap-10{
+    row-gap: 10px;
+}
+.row-gap-15{
+    row-gap: 15px;
+}
+.row-gap-20{
+    row-gap: 20px;
+}

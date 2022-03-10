@@ -1,0 +1,279 @@
+.input-wrapper{
+    .input-header{
+        display: flex;
+        flex-direction: row;
+        padding: 0px 5px;
+    }
+    .input-main{
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        position: relative;
+        filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+        input, select, textarea{
+            flex-grow: 1;
+            background: none;
+            border: none;
+            padding: 10px 15px;
+            outline: none;
+            font-size: 1rem;
+            max-width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            min-width: 50px;
+            &.small{
+                padding: 5px 5px;
+                font-size: 14px;
+            }
+            &:disabled{
+                opacity: .5;
+            }
+        }
+        border: 1px solid #dadada;
+        background: white;
+        border-radius: 5px;
+        margin-top: 5px;
+        align-items: stretch;
+
+        transition: 0.2s ease-in-out;
+        outline: none;
+        &::placeholder{
+            opacity: 0.5;
+        }
+        &:focus-within{
+            -webkit-box-shadow: 0px 0px 0px 3px #d4d4d450;
+            -moz-box-shadow: 0px 0px 0px 3px #d4d4d450;
+            box-shadow: 0px 0px 0px 3px #d4d4d450;
+        }
+        &.read-only{
+            border: 1px solid transparent;
+        }
+        .input-suffix{
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            &.float{
+                position: absolute;
+                right: 0px;
+                height: 100%;
+            }
+        }
+        &-file{
+            border: 1px solid #dadada;
+            border-radius: 5px;
+            padding: 10px 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            margin-top: 5px;
+            background: white;
+            filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+            position: relative;
+            input{
+                display: none;
+            }
+            .image-preview{
+                width: 100px;
+                height: auto;
+                max-height: 100px;
+                object-fit: cover;
+                border-radius: 2px;
+            }
+            .audio-preview{
+                max-width: 280px;
+            }
+            .video-preview{
+                border-radius: 2px;
+                display: block;
+                max-width: 300px;
+            }
+        }
+    }
+    .input-main-switch, .input-main-none{
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+    }
+    .input-main-checkbox{
+        display: flex;
+        flex-direction: row;
+        padding: 0px 5px;
+        input[type=checkbox]{
+            filter: hue-rotate(150deg);
+        }
+        input[type=radio]{
+            filter: hue-rotate(150deg);
+        }
+        label{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    &.input-main{
+        .is-invalid{
+            border-color: red;
+        }
+    }
+    .input-feedback{
+        display: flex;
+        flex-direction: row;
+        padding: 0px 5px;
+        margin-top: 5px;
+    }
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 83px;
+    height: 41px;
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+    input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 10px;
+        border: 1px solid #dcdcdcde;
+    }
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 31px;
+        width: 33px;
+        left: 4px;
+        bottom: 4px;
+        background-color: #dcdcdcde;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 5px;
+    }
+    input:checked + .slider {
+      background-color: $primary;
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px $primary;
+      -webkit-box-shadow: 0px 0px 0px 3px #7b61ff50;
+      -moz-box-shadow: 0px 0px 0px 3px #7b61ff50;
+      box-shadow: 0px 0px 0px 3px #7b61ff50;
+      border-color: $primary-dimed;
+      &:before{
+        background: #ada0dc;
+      }
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(40px);
+      -ms-transform: translateX(40px);
+      transform: translateX(40px);
+      background: white;
+    }
+}
+
+
+.ellipsis-row{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.form-sec-label{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    opacity: .75;
+    .sec-label{
+        width: 40px;
+        height: 40px;
+        border-radius: 99px;
+        background: whitesmoke;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .material-icons, .matserial-icons-outlined{
+            font-size: 20px;
+        }
+    }
+    .sec-title{
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+.form-section{
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    .form-body{
+        padding: 20px;
+    }
+    .form-footer{
+        background: whitesmoke;
+        padding: 20px;
+    }
+}
+
+.form-header{
+    display: flex;
+    flex-direction: column;
+    h1{
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .label{
+        font-size: 14px;
+        opacity: .7;
+    }
+}
+
+.no-click{
+    pointer-events: none;
+    user-select: none;
+}
+
+.pill{
+    padding: 2px 5px;
+    background-color: $primary;
+    border-radius: 20px;
+}
+
+.image-preview-container{
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    width: auto;
+    min-height: 200px;
+    height: fit-content;
+    max-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: whitesmoke;
+    padding: 5px;
+    overflow: hidden;
+    img{
+        width: fit-content;
+        max-width: 100%;
+        max-height: calc(300px - 10px);
+        object-fit: contain;
+    }
+}

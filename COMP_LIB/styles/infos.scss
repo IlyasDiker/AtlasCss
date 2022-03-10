@@ -1,0 +1,30 @@
+.info-wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    // border-radius: 10px;
+    background: #fafaf9;
+    &.warning{
+        background: #fffbeb;
+    }
+    &.error{
+        background: #fef2f2;
+    }
+    .info-icon{
+        font-size: 20px;
+    }
+    .info-message{
+        flex-grow: 1;
+    }
+}
+
+.bulb{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #dadada;
+    &.success{
+        background: #16a34a;
+    }
+}

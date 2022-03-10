@@ -1,0 +1,91 @@
+.drawers-container{
+    position: fixed;
+    top:0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    pointer-events: none;
+    z-index: 200;
+}
+
+.drawer-wrapper{
+    pointer-events: auto;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 700px) {
+        justify-content: flex-end;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    visibility: hidden;
+    isolation: isolate;
+    &.active{
+        visibility: visible;
+        .drawer-backdrop{
+            opacity: 1;
+        }
+        .drawer-container{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    .drawer-backdrop{
+        transition: 0.3s ease-in-out;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        // background: rgba(255, 255, 255, 0.282);
+        background: rgba(0, 0, 0, 0.282);
+        opacity: 0;
+    }
+    .drawer-container{
+        transition: 0.4s ease-in-out, opacity 0.2s ease-in-out;
+        transform: translateX(20%);
+        opacity: 0;
+        background: white;
+        width: clamp(400px, 70%, 600px);
+        height: 100%;
+        z-index: 210;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 100vh;
+        @media (max-width: 700px) {
+            width: 100%;
+        }
+        .drawer-body{
+            overflow: auto;
+            flex-grow: 1;
+        }
+
+        .drawer-header, .drawer-footer{
+            padding: 29px;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    .close-btn{
+        user-select: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f5f5f5;
+        border: none;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            background: #e5e5e5;
+            
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.button{
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: #f4f4f5;
+    color: #262626;
+    transition: 0.2s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+    &:hover{
+        background: #fafafa;
+        color: #000000;
+    }
+    &.primary{
+        background: $primary;
+        color: white;
+        .loader{
+            background: $primary;
+        }
+        &:hover{
+            background: $primary-dimed;
+            color: white;
+        }
+    }
+    &.white{
+        background: white;
+        color: black;
+        .loader{
+            background: white;
+        }
+        &:hover{
+            background: #fafafa;
+        }
+    }
+    &.danger{
+        background: #dc2626;
+        color: white;
+        .loader{
+            background: #dc2626;
+        }
+        &:hover{
+            background: #b91c1c;
+            color: white;
+        }
+    }
+    &.large{
+        width: 100%;
+    }
+    &.round{
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+    }
+    &.square{
+        width: 39px;
+        height: 39px;
+        border-radius: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+    }
+    &.rounded{
+        border-radius: 50px;
+    }
+    &.toggled{
+        box-shadow: 0 0 0 3px $primary;
+    }
+    .loader{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        background: #f4f4f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.2s ease-in-out;
+        transform: translateY(100%);
+    }
+    &.loading{
+        .loader{
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+.add-new-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: 0.5s ease-in-out;
+    background: #6647d7de;
+    color: white;
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 20;
+    cursor: pointer;
+    .material-icons-outlined, .material-icons{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+    }
+    .add-btn-msg{
+        width: fit-content;
+        overflow: hidden;
+        max-width: 0px;
+        margin-left: 0px;
+        white-space: nowrap;
+        transition: 0.2s ease-in-out;
+    }
+    &:hover{
+        .add-btn-msg{
+            margin-left: 10px;
+            margin-right: 20px;
+            max-width: 150px;
+
+        }
+    }
+}
+
+.close-btn{
+    -webkit-tap-highlight-color: transparent;
+}
+
+button{
+    -webkit-tap-highlight-color: transparent;
+}
